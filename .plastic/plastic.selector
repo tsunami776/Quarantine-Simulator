@@ -1,0 +1,4 @@
+repository "Quarantine Simulator@feixiao1125@cloud"
+  path "/"
+    smartbranch "/main/test" 
+     
