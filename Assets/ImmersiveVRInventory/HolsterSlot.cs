@@ -28,12 +28,14 @@ public class HolsterSlot : MonoBehaviour
     [SerializeField] [TagSelector] private string[] LimitToItemsWithTag = new string[] { };
     [SerializeField] private HolsterableItem InitiallyStoredItem;
     
-    [Header("Debug")]
-    [SerializeField] private bool IsDebug = false;
-    [ShowIf(nameof(IsDebug))] [SerializeField] [ReadOnly] private float _currentRingRadius;
-    [ShowIf(nameof(IsDebug))] [SerializeField] [ReadOnly] private HolsterableItem _currentlyStoredItem;
-    [ShowIf(nameof(IsDebug))] [SerializeField] [ReadOnly] private HolsterSlotContainer _holsterSlotContainer;
-    
+    // [Header("Debug")]
+    // [SerializeField] private bool IsDebug = false;
+    // [ShowIf(nameof(IsDebug))] [SerializeField] [ReadOnly] private float _currentRingRadius;
+    // [ShowIf(nameof(IsDebug))] [SerializeField] [ReadOnly] private HolsterableItem _currentlyStoredItem;
+    // [ShowIf(nameof(IsDebug))] [SerializeField] [ReadOnly] private HolsterSlotContainer _holsterSlotContainer;
+    public float _currentRingRadius;
+    public HolsterableItem _currentlyStoredItem;
+    public HolsterSlotContainer _holsterSlotContainer;
 
     public HolsterSlotContainer HolsterSlotContainer
     {
@@ -144,8 +146,8 @@ public class HolsterSlot : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        if (IsDebug)
-        {
+        // if (IsDebug)
+        // {
             if (AttachmentPoint != null)
             {
                 Debug.DrawRay(AttachmentPoint.position, AttachmentPoint.up, Color.green);
@@ -161,7 +163,7 @@ public class HolsterSlot : MonoBehaviour
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawWireCube(CurrentlyStoredItem.MeshRenderer.bounds.center, CurrentlyStoredItem.MeshRenderer.bounds.size);
             }
-        }
+        //}
     }
 
     void Reset()

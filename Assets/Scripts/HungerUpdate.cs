@@ -6,12 +6,12 @@ using TMPro;
 public class HungerUpdate : MonoBehaviour
  {
      public TMP_Text m_TextComponent;
-     public float health = 100.0f;
+     public float hunger = 50.0f;
      private const float coef = 0.2f;
      
      void Update ()
      {
-         m_TextComponent.text = health.ToString("F1");
-         health -= coef * Time.deltaTime;
+         m_TextComponent.text = hunger.ToString("F1");
+         hunger -= coef * Time.deltaTime;
      }        
  }
